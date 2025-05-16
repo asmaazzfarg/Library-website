@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المكتبات الشريكة - مكتبة النور</title>
+    <script>
+        function showOnMap(libraryName) {
+            alert("سيتم عرض موقع " + libraryName + " على الخريطة");
+            // هنا يمكن إضافة كود لعرض الخريطة
+        }
+        
+        function filterByCity() {
+            var city = document.getElementById("cityFilter").value;
+            var rows = document.querySelectorAll("#librariesTable tr");
+            
+            for (var i = 1; i < rows.length; i++) {
+                var rowCity = rows[i].cells[2].textContent;
+                if (city === "all" || rowCity === city) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body bgcolor="#f5e6ca" text="#5c3a21">
+    <header>
+        <h1 align="center">المكتبات الشريكة</h1>
+        <nav>
+            <table width="100%" bgcolor="#e8c4a0" cellpadding="10">
+                <tr>
+                    <td width="20%"><a href="index.html">الرئيسية</a></td>
+                    <td width="20%"><a href="books.html">الأقسام</a></td>
+                    <td width="20%"><a href="publishers.html">دور النشر</a></td>
+                    <td width="20%"><a href="libraries.html">المكتبات الشريكة</a></td>
+                    <td width="20%"><a href="login.html">تسجيل الدخول</a></td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 align="center">قائمة المكتبات الشريكة</h2>
+            
+            <table width="80%" align="center" bgcolor="#e8c4a0" cellpadding="10">
+                <tr>
+                    <td>
+                        <label for="cityFilter">تصفية حسب المدينة:</label>
+                        <select id="cityFilter" onchange="filterByCity()">
+                            <option value="all">جميع المدن</option>
+                            <option value="القاهرة">القاهرة</option>
+                            <option value="بيروت">بيروت</option>
+                            <option value="الرياض">الرياض</option>
+                            <option value="الدار البيضاء">الدار البيضاء</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            
+            <table width="90%" align="center" bgcolor="#e8c4a0" cellpadding="10" cellspacing="5" border="1" id="librariesTable">
+                <tr>
+                    <th width="10%">التسلسل</th>
+                    <th width="25%">اسم المكتبة</th>
+                    <th width="15%">المدينة</th>
+                    <th width="20%">العنوان</th>
+                    <th width="15%">رقم الهاتف</th>
+                    <th width="15%">الموقع</th>
+                </tr>
+                
+                <tr>
+                    <td>1</td>
+                    <td>مكتبة الأسرة</td>
+                    <td>القاهرة</td>
+                    <td>شارع القصر العيني، وسط البلد</td>
+                    <td>+20227945566</td>
+                    <td><button onclick="showOnMap('مكتبة الأسرة')" style="background-color:#d9b38c; padding:5px;">عرض الخريطة</button></td>
+                </tr>
+                
+                <tr>
+                    <td>2</td>
+                    <td>مكتبة أنطوان</td>
+                    <td>بيروت</td>
+                    <td>شارع الحمراء، بناية ساسين</td>
+                    <td>+9611380181</td>
+                    <td><button onclick="showOnMap('مكتبة أنطوان')" style="background-color:#d9b38c; padding:5px;">عرض الخريطة</button></td>
+                </tr>
+                
+                <tr>
+                    <td>3</td>
+                    <td>مكتبة العبيكان</td>
+                    <td>الرياض</td>
+                    <td>حي العليا، شارع العليا العام</td>
+                    <td>+96611215999</td>
+                    <td><button onclick="showOnMap('مكتبة العبيكان')" style="background-color:#d9b38c; padding:5px;">عرض الخريطة</button></td>
+                </tr>
+                
+                <tr>
+                    <td>4</td>
+                    <td>مكتبة كارفور</td>
+                    <td>الدار البيضاء</td>
+                    <td>زنقة عبد الكريم الخطابي، أنفا</td>
+                    <td>+212522362020</td>
+                    <td><button onclick="showOnMap('مكتبة كارفور')" style="background-color:#d9b38c; padding:5px;">عرض الخريطة</button></td>
+                </tr>
+            </table>
+            
+            <h3 align="center">فوائد الشراكة مع المكتبات</h3>
+            <table width="80%" align="center" bgcolor="#e8c4a0" cellpadding="15">
+                <tr>
+                    <td>
+                        <ul>
+                            <li>تبادل الكتب بين المكتبات</li>
+                            <li>خصومات خاصة لأعضاء المكتبات الشريكة</li>
+                            <li>إمكانية حجز الكتب من أي مكتبة شريكة</li>
+                            <li>المشاركة في الفعاليات الثقافية المشتركة</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer align="center" bgcolor="#d9b38c" cellpadding="10">
+        <p>جميع الحقوق محفوظة &copy; مكتبة النور 2023</p>
+    </footer>
+</body>
+</html>

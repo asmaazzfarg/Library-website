@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أقسام الكتب - مكتبة الاسما</title>
+    <script>
+        function filterBooks(category) {
+            alert("سيتم عرض كتب قسم: " + category);
+            // هنا يمكن إضافة كود لتصفية الكتب حسب القسم
+        }
+    </script>
+</head>
+<body bgcolor="#f5e6ca" text="#5c3a21">
+    <header>
+        <h1 align="center">أقسام الكتب في مكتبة الاسما</h1>
+        <nav>
+            <table width="100%" bgcolor="#e8c4a0" cellpadding="10">
+                <tr>
+                    <td width="20%"><a href="index.html">الرئيسية</a></td>
+                    <td width="20%"><a href="books.html">الأقسام</a></td>
+                    <td width="20%"><a href="publishers.html">دور النشر</a></td>
+                    <td width="20%"><a href="about.html">عن المكتبة</a></td>
+                    <td width="20%"><a href="login.html">تسجيل الدخول</a></td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <table width="90%" align="center" bgcolor="#e8c4a0" cellpadding="15" cellspacing="5" border="1">
+                <tr>
+                    <th colspan="4">أقسام المكتبة</th>
+                </tr>
+                <tr>
+                    <td width="25%" align="center">
+                        <button onclick="filterBooks('أدب')" style="background-color:#d9b38c; padding:10px; border:none; cursor:pointer;">
+                            <h3>الأدب</h3>
+                        </button>
+                    </td>
+                    <td width="25%" align="center">
+                        <button onclick="filterBooks('علوم')" style="background-color:#d9b38c; padding:10px; border:none; cursor:pointer;">
+                            <h3>العلوم</h3>
+                        </button>
+                    </td>
+                    <td width="25%" align="center">
+                        <button onclick="filterBooks('تاريخ')" style="background-color:#d9b38c; padding:10px; border:none; cursor:pointer;">
+                            <h3>التاريخ</h3>
+                        </button>
+                    </td>
+                    <td width="25%" align="center">
+                        <button onclick="filterBooks('فلسفة')" style="background-color:#d9b38c; padding:10px; border:none; cursor:pointer;">
+                            <h3>الفلسفة</h3>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+
+            <h2 align="center">قائمة الكتب</h2>
+            
+            <table width="90%" align="center" bgcolor="#e8c4a0" cellpadding="10" cellspacing="5" border="1">
+                <tr>
+                    <th width="5%">#</th>
+                    <th width="25%">عنوان الكتاب</th>
+                    <th width="20%">المؤلف</th>
+                    <th width="20%">دار النشر</th>
+                    <th width="15%">السنة</th>
+                    <th width="15%">الإجراءات</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>الأيام</td>
+                    <td>طه حسين</td>
+                    <td>المعارف</td>
+                    <td>1929</td>
+                    <td><button onclick="alert('تم إضافة الكتاب إلى السلة')" style="background-color:#d9b38c; padding:5px;">إضافة إلى السلة</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>زقاق المدق</td>
+                    <td>نجيب محفوظ</td>
+                    <td>دار الشروق</td>
+                    <td>1947</td>
+                    <td><button onclick="alert('تم إضافة الكتاب إلى السلة')" style="background-color:#d9b38c; padding:5px;">إضافة إلى السلة</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>موسوعة تاريخ العلوم العربية</td>
+                    <td>راشد الراشد</td>
+                    <td>مركز دراسات الوحدة العربية</td>
+                    <td>1997</td>
+                    <td><button onclick="alert('تم إضافة الكتاب إلى السلة')" style="background-color:#d9b38c; padding:5px;">إضافة إلى السلة</button></td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer align="center" bgcolor="#d9b38c" cellpadding="10">
+        <p>جميع الحقوق محفوظة &copy; مكتبة الاسما 2025</p>
+    </footer>
+</body>
+</html>

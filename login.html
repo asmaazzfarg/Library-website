@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - مكتبة الاسما</title>
+    <script>
+        function validateForm() {
+            var username = document.forms["loginForm"]["username"].value;
+            var password = document.forms["loginForm"]["password"].value;
+            
+            if (username == "" || password == "") {
+                alert("يجب ملء جميع الحقول");
+                return false;
+            }
+            
+            // يمكن إضافة المزيد من التحقق هنا
+            
+            alert("تم تسجيل الدخول بنجاح!");
+            return true;
+        }
+    </script>
+</head>
+<body bgcolor="#f5e6ca" text="#5c3a21">
+    <header>
+        <h1 align="center">تسجيل الدخول إلى مكتبة الاسما</h1>
+        <nav>
+            <table width="100%" bgcolor="#e8c4a0" cellpadding="10">
+                <tr>
+                    <td width="20%"><a href="index.html">الرئيسية</a></td>
+                    <td width="20%"><a href="books.html">الأقسام</a></td>
+                    <td width="20%"><a href="publishers.html">دور النشر</a></td>
+                    <td width="20%"><a href="about.html">عن المكتبة</a></td>
+                    <td width="20%"><a href="login.html">تسجيل الدخول</a></td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <form name="loginForm" onsubmit="return validateForm()" method="post">
+                <table width="50%" align="center" bgcolor="#e8c4a0" cellpadding="20" cellspacing="5" border="1">
+                    <tr>
+                        <th colspan="2">نموذج تسجيل الدخول</th>
+                    </tr>
+                    <tr>
+                        <td width="30%">اسم المستخدم:</td>
+                        <td width="70%"><input type="text" name="username" size="30"></td>
+                    </tr>
+                    <tr>
+                        <td>كلمة المرور:</td>
+                        <td><input type="password" name="password" size="30"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="تسجيل الدخول" bgcolor="#d9b38c">
+                            <input type="reset" value="إعادة تعيين">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            ليس لديك حساب؟ <a href="register.html">سجل الآن</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+    </main>
+
+    <footer align="center" bgcolor="#d9b38c" cellpadding="10">
+        <p>جميع الحقوق محفوظة &copy; مكتبة الاسما 2025</p>
+    </footer>
+</body>
+</html>

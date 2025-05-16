@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دور النشر العربية - مكتبة النور</title>
+    <script>
+        function showPublisherDetails(publisherId) {
+            var details = document.getElementById(publisherId);
+            if (details.style.display === "none") {
+                details.style.display = "table-row";
+            } else {
+                details.style.display = "none";
+            }
+        }
+        
+        function searchPublishers() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var rows = document.querySelectorAll("#publishersTable tr");
+            
+            for (var i = 1; i < rows.length; i++) {
+                var name = rows[i].cells[1].textContent.toLowerCase();
+                var country = rows[i].cells[2].textContent.toLowerCase();
+                if (name.includes(input) || country.includes(input)) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body bgcolor="#f5e6ca" text="#5c3a21">
+    <header>
+        <h1 align="center">دور النشر العربية</h1>
+        <nav>
+            <table width="100%" bgcolor="#e8c4a0" cellpadding="10">
+                <tr>
+                    <td width="20%"><a href="index.html">الرئيسية</a></td>
+                    <td width="20%"><a href="books.html">الأقسام</a></td>
+                    <td width="20%"><a href="publishers.html">دور النشر</a></td>
+                    <td width="20%"><a href="libraries.html">المكتبات الشريكة</a></td>
+                    <td width="20%"><a href="login.html">تسجيل الدخول</a></td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 align="center">قائمة دور النشر العربية</h2>
+            
+            <table width="80%" align="center" bgcolor="#e8c4a0" cellpadding="10">
+                <tr>
+                    <td colspan="2">
+                        <input type="text" id="searchInput" placeholder="ابحث عن دار نشر..." size="40">
+                        <button onclick="searchPublishers()" style="background-color:#d9b38c; padding:5px 10px;">بحث</button>
+                    </td>
+                </tr>
+            </table>
+            
+            <table width="90%" align="center" bgcolor="#e8c4a0" cellpadding="10" cellspacing="5" border="1" id="publishersTable">
+                <tr>
+                    <th width="10%">التسلسل</th>
+                    <th width="25%">اسم دار النشر</th>
+                    <th width="15%">البلد</th>
+                    <th width="20%">سنة التأسيس</th>
+                    <th width="15%">عدد الكتب</th>
+                    <th width="15%">تفاصيل</th>
+                </tr>
+                
+                <!-- دار النشر 1 -->
+                <tr>
+                    <td>1</td>
+                    <td>دار الشروق</td>
+                    <td>مصر</td>
+                    <td>1992</td>
+                    <td>1500</td>
+                    <td><button onclick="showPublisherDetails('shoroukDetails')" style="background-color:#d9b38c; padding:5px;">عرض</button></td>
+                </tr>
+                <tr id="shoroukDetails" style="display:none;">
+                    <td colspan="6">
+                        <table width="100%" cellpadding="10">
+                            <tr>
+                                <td width="30%"><strong>المؤسس:</strong> إبراهيم المعلم</td>
+                                <td width="30%"><strong>الموقع:</strong> <a href="https://www.shorouk.com" target="_blank">shorouk.com</a></td>
+                                <td width="40%"><strong>أبرز المؤلفين:</strong> نجيب محفوظ، يوسف زيدان</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><strong>نبذة:</strong> من أكبر دور النشر في العالم العربي، متخصصة في الأدب العربي والعالمي</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                
+                <!-- دار النشر 2 -->
+                <tr>
+                    <td>2</td>
+                    <td>منشورات الجمل</td>
+                    <td>لبنان</td>
+                    <td>1993</td>
+                    <td>800</td>
+                    <td><button onclick="showPublisherDetails('aljamalDetails')" style="background-color:#d9b38c; padding:5px;">عرض</button></td>
+                </tr>
+                <tr id="aljamalDetails" style="display:none;">
+                    <td colspan="6">
+                        <table width="100%" cellpadding="10">
+                            <tr>
+                                <td width="30%"><strong>المؤسس:</strong> خالد المعالي</td>
+                                <td width="30%"><strong>الموقع:</strong> <a href="https://aljamal.org" target="_blank">aljamal.org</a></td>
+                                <td width="40%"><strong>أبرز المؤلفين:</strong> أدونيس، محمود درويش</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><strong>نبذة:</strong> متخصصة في الشعر والفلسفة والعلوم الإنسانية</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                
+                <!-- دار النشر 3 -->
+                <tr>
+                    <td>3</td>
+                    <td>دار الساقي</td>
+                    <td>لبنان</td>
+                    <td>1984</td>
+                    <td>1200</td>
+                    <td><button onclick="showPublisherDetails('alsaqiDetails')" style="background-color:#d9b38c; padding:5px;">عرض</button></td>
+                </tr>
+                <tr id="alsaqiDetails" style="display:none;">
+                    <td colspan="6">
+                        <table width="100%" cellpadding="10">
+                            <tr>
+                                <td width="30%"><strong>المؤسس:</strong> مأمون سكر</td>
+                                <td width="30%"><strong>الموقع:</strong> <a href="https://alsaqibookshop.com" target="_blank">alsaqibookshop.com</a></td>
+                                <td width="40%"><strong>أبرز المؤلفين:</strong> إليف شافاق، واسيني الأعرج</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><strong>نبذة:</strong> تنشر كتباً بالعربية والإنجليزية والفرنسية</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer align="center" bgcolor="#d9b38c" cellpadding="10">
+        <p>جميع الحقوق محفوظة &copy; مكتبة النور 2023</p>
+    </footer>
+</body>
+</html>
